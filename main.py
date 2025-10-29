@@ -3,7 +3,6 @@ from game.validate import is_valid_guess, is_new_guess
 from game.logic import score_guess, is_won, game_state, apply_guess
 from game.io import prompt_guess, print_feedback, print_status, print_result
 
-length = 4
 def play(length: int):
     secret = generate_secret()
     game_info = game_state(secret, 4)
