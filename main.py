@@ -17,6 +17,7 @@ def play(length: int):
             print_status(game_info)
     print_result(game_info)
 
-play(4)
+if __name__ == "__main__":
+    play(4)
 
 
