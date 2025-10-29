@@ -18,3 +18,10 @@ def is_valid_guess(guess: str) -> tuple[bool, str]:
         return True, guess
     return False, guess
 
+def is_new_guess(guess: str, history:list[str]) -> bool:
+    if guess in history:
+        print("אתה חוזר על עצמך...")
+        return False
+    return True
+
+
