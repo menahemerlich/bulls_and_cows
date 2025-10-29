@@ -14,14 +14,22 @@ def is_won(bulls: int, length: int) -> bool:
         return True
     return False
 
-def game_state(secret: str, length:int, guess: str, bulls_cows: tuple[int, int] ) -> dict:
-    game_info = {
+def game_state(secret: str, length:int) -> dict:
+    state = {
         "secret": secret,
         "length": length,
         "history": [],
-        "seen": [f"guess: {guess}, bulls: {bulls_cows[0]}, cows: {bulls_cows[1]}"]
+        "seen": []
     }
-    return game_info
+    return state
+
+def apply_guess(state: dict, guess: str, bulls_cows: tuple[int, int]) -> tuple[int, int]:
+    state["history"].append(guess)
+    state["seen"].append((guess, bulls_cows[0], bulls_cows[1]))
+    return bulls_cows[0], bulls_cows[1]
+
+
+
 
 
 
