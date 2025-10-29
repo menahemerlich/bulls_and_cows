@@ -20,7 +20,8 @@ def game_state(secret: str, length:int) -> dict:
         "length": length,
         "history": [],
         "seen": [],
-        "bulls": 0
+        "bulls": 0,
+        "step_count": 0
     }
     return state
 
@@ -28,6 +29,7 @@ def apply_guess(state: dict, guess: str, bulls_cows: tuple[int, int]) -> tuple[i
     state["history"].append(guess)
     state["bulls"] = bulls_cows[0]
     state["seen"].append((guess, bulls_cows[0], bulls_cows[1]))
+    state["step_count"] += 1
     return bulls_cows[0], bulls_cows[1]
 
 
