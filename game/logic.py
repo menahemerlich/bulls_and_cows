@@ -13,3 +13,20 @@ def is_won(bulls: int, length: int) -> bool:
     if bulls == length:
         return True
     return False
+
+def game_state(secret: str, length:int, guess: str, bulls_cows: tuple[int, int] ) -> dict:
+    game_info = {
+        "secret": secret,
+        "length": length,
+        "history": [],
+        "seen": [f"guess: {guess}, bulls: {bulls_cows[0]}, cows: {bulls_cows[1]}"]
+    }
+    return game_info
+
+
+
+
+
+
+
+
