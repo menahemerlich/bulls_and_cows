@@ -12,9 +12,8 @@ def generate_secret(length: int = 4) -> str:
         secret += str(i)
     return secret
 
-def is_valid_guess(guess: str) -> tuple[bool, str]:
-    num_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    if len(guess) == 1 and guess in num_list:
+def is_valid_guess(guess: str, length: int) -> tuple[bool, str]:
+    if len(guess) == length and guess.isdigit():
         return True, guess
     return False, guess
 
