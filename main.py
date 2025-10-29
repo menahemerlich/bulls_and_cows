@@ -9,7 +9,6 @@ def play(length: int):
     while not is_won(game_info, length):
         guess = prompt_guess()
         if is_valid_guess(guess, length)[0] and is_new_guess(guess, game_info["history"]):
-
             bulls_and_cows = score_guess(secret, guess)
             apply_guess(game_info, guess, bulls_and_cows)
             print_feedback(guess, bulls_and_cows[0], bulls_and_cows[1])
