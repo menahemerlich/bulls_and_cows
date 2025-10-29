@@ -1,10 +1,10 @@
 import random
 
 
-def generate_secret(length: int = 4, *, unique_digits: bool = True, allow_leading_zero: bool = False, rng: random.Random | None = None) -> str:
+def generate_secret(length: int = 4) -> str:
     secret = ""
     num_list = []
-    while len(num_list) < 4:
+    while len(num_list) < length:
         num = random.randint(1, 9)
         if num not in num_list:
             num_list.append(num)
@@ -12,5 +12,9 @@ def generate_secret(length: int = 4, *, unique_digits: bool = True, allow_leadin
         secret += str(i)
     return secret
 
-
+def is_valid_guess(guess: str) -> tuple[bool, str]:
+    num_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    if len(guess) == 1 and guess in num_list:
+        return True, guess
+    return False, guess
 
