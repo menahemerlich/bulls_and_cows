@@ -8,6 +8,10 @@ def print_feedback(guess: str, bulls: int, cows: int) -> None:
           f"your bulls: {bulls}\n"
           f"your cows: {cows}")
 
+def print_status(state: dict) -> None:
+    print(f"your history: {state["seen"]}\n")
+
+
 
 
 
